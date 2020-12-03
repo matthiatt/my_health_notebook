@@ -1,33 +1,33 @@
 const User = require("../../models/user");
 const userSession = require("../../models/userSession");
-module.exports = app => {
+module.exports = (app) => {
   app.post("/api/account/signup", (req, res, next) => {
     const { body } = req;
     const { firstName, lastName, email, password } = body;
-    let { email } = body;
+    // let { email } = body;
 
     if (!firstName) {
       return res.send({
         success: false,
-        message: "First name field can not be left blank."
+        message: "First name field can not be left blank.",
       });
     }
     if (!lastName) {
       return res.send({
         success: false,
-        message: "Last name field can not be left blank."
+        message: "Last name field can not be left blank.",
       });
     }
     if (!email) {
       return res.send({
         success: false,
-        message: "email field must be valid and can not be left blank."
+        message: "email field must be valid and can not be left blank.",
       });
     }
     if (!password) {
       return res.send({
         success: false,
-        message: "Password must be strong and can not be left blank."
+        message: "Password must be strong and can not be left blank.",
       });
     }
 
@@ -35,7 +35,7 @@ module.exports = app => {
 
     User.find(
       {
-        email: email
+        email: email,
       },
       (err, previousUsers) => {
         if (err) {
@@ -54,12 +54,12 @@ module.exports = app => {
           if (err) {
             return res.send({
               success: false,
-              message: "Server error"
+              message: "Server error",
             });
           }
           return res.send({
             success: true,
-            message: "You are now signed up."
+            message: "You are now signed up.",
           });
         });
       }
@@ -74,13 +74,13 @@ module.exports = app => {
     if (!email) {
       return res.send({
         success: false,
-        message: "Email can not be left blank."
+        message: "Email can not be left blank.",
       });
     }
     if (!password) {
       return res.send({
         success: false,
-        message: "Password can not be left blank."
+        message: "Password can not be left blank.",
       });
     }
 
@@ -88,42 +88,113 @@ module.exports = app => {
 
     User.find(
       {
-        email: email
+        email: email,
       },
       (err, users) => {
         if (err) {
           return res.send({
             success: false,
-            message: "Server error"
+            message: "Server error",
           });
         }
         if (users.length != 1) {
           return res.send({
             success: false,
-            message: "Invalid response."
+            message: "Invalid response.",
           });
         }
         const user = users[0];
         if (!user.validPassword(password)) {
           return res.send({
             success: false,
-            messsage: "Invalid Response."
+            messsage: "Invalid Response.",
           });
         }
-        new userSession() = new UserSession();
+        const userSession = new UserSession();
         userSession.userId = user._id;
         userSession.save((err, doc) => {
           if (err) {
+            console.log(err);
             return res.send({
               success: false,
-              message: "Server error."
+              message: "Server error.",
             });
           }
           return res.send({
             success: true,
             message: "Valid sign in.",
-            token: doc._id
+            token: doc._id,
           });
+        });
+      }
+    );
+  });
+
+  app.post("/api/account/verify", (req, res, next) => {
+    // Get the token
+    // verify that token is unique and can be deleted
+    const { query } = req;
+    const { token } = query;
+
+    UserSession.find(
+      {
+        _id: token,
+        isDeleted: false,
+      },
+      (err, sessions) => {
+        if (err) {
+          console.log(err);
+          return res.send({
+            success: false,
+            message: "Error, server error",
+          });
+        }
+        if (sessions.legnth != 1) {
+          return res.send({
+            success: false,
+            message: "Error: Invalid",
+          });
+        } else {
+          return res.send({
+            success: true,
+            message: "Good Job",
+          });
+        }
+      }
+    );
+  });
+
+  app.get("api/account/logout", (req, res, next) => {
+    const { query } = req;
+    const { token } = query;
+
+    UserSession.findOneAndUpdate(
+      {
+        _id: token,
+        isDeleted: false,
+      },
+      {
+        $set: { isDeleted: true },
+      },
+      null,
+      (err, sessions) => {
+        if (err) {
+          console.log(err);
+          return res.send({
+            success: false,
+            message: "Error, server error",
+          });
+        }
+
+        // if (sessions.legnth != 1) {
+        //   return res.send({
+        //     success: false,
+        //     message: "Error: Invalid"
+        //   });
+        // } else {
+        return res.send({
+          success: true,
+          message: "Good Job",
         });
       }
     );
