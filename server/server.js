@@ -7,16 +7,12 @@ const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
 
-const config = require("../config/config");
+const config = require("../../config/config");
 const webpackConfig = require("../webpack.config");
 
 const isDev = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 8080;
 
-// Configuration
-// ================================================================================================
-
-// Set up Mongoose
 mongoose.connect(isDev ? config.db_dev : config.db);
 mongoose.Promise = global.Promise;
 
@@ -24,7 +20,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-require("./routes")(app);
+require(".")(app);
 
 if (isDev) {
   const compiler = webpack(webpackConfig);
