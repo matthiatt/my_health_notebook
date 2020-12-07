@@ -75,7 +75,7 @@ export default function Header() {
             Welcome to <br />
             My <span className={classes.colorText}>Health Notebook.</span>
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
+          <Scroll to="Body" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>
