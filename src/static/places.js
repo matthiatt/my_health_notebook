@@ -13,6 +13,13 @@ const places = [
     imageUrl: process.env.PUBLIC_URL + '/assets/pilltime.jpg',
     time: 1500,
   },
+  {
+    title: 'Login',
+    description:
+      'Sign in in order to monitor the course of treatment, add a new prescription, and manage the status of certain drugs.',
+    // imageUrl: process.env.PUBLIC_URL + '/assets/pilltime.jpg',
+    time: 1500,
+  },
 ];
 
 export default places;

@@ -21,6 +21,7 @@ export default function () {
     <div className={classes.root} id="Body">
       <ImageCard place={places[1]} checked={checked} />
       <ImageCard place={places[0]} checked={checked} />
+      <ImageCard place={places[2]} checked={checked} />
     </div>
   );
 }
