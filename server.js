@@ -1,19 +1,69 @@
-const nodemon = require('nodemon');
+const express = require('express');
+const fs = require('fs');
+const historyApiFallback = require('connect-history-api-fallback');
+const mongoose = require('mongoose');
 const path = require('path');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
-nodemon({
-  execMap: {
-    js: 'node'
-  },
-  script: path.join(__dirname, 'server/server'),
-  ignore: [],
-  watch: process.env.NODE_ENV !== 'production' ? ['server/*'] : false,
-  ext: 'js'
-})
-.on('restart', function() {
-  console.log('Server restarted!');
-})
-.once('exit', function () {
-  console.log('Shutting down server');
-  process.exit();
+const config = require('../config/config');
+const webpackConfig = require('../webpack.config');
+
+const isDev = process.env.NODE_ENV !== 'production';
+const PORT  = process.env.PORT || 3001;
+
+
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/loginDb", {
+  useNewUrlParser: true, 
+  useFindAndModify: false
 });
+mongoose.Promise = global.Promise;
+
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// API routes
+require('./routes')(app);
+
+if (isDev) {
+  const compiler = webpack(webpackConfig);
+
+  app.use(historyApiFallback({
+    verbose: false
+  }));
+
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    contentBase: path.resolve(__dirname, '../client/public'),
+    stats: {
+      colors: true,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false,
+      modules: false
+    }
+  }));
+
+  app.use(webpackHotMiddleware(compiler));
+  app.use(express.static(path.resolve(__dirname, '../dist')));
+} else {
+  app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.get('*', function (req, res) {
+    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+    res.end();
+  });
+}
+
+app.listen(PORT, '0.0.0.0', (err) => {
+  if (err) {
+    console.log(err);
+  }
+
+  console.info('>>> 🌎 Open http://0.0.0.0:%s/ in your browser.', PORT);
+});
+
+module.exports = app;
