@@ -58,6 +58,7 @@ export default function Header() {
           <h1 className={classes.appbarTitle}>
             My<span className={classes.colorText}>HealthNotebook.</span>
           </h1>
+          <Button color={classes.signup}>Sign up</Button>
           <Button color={classes.login}>Login</Button>
           <IconButton>
             <SortIcon className={classes.icon} />
