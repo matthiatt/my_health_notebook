@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
+import { AppBar, IconButton, Button, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   colorText: {
     color: '#311432',
   },
+  login: {
+    color: '#311432',
+  },
   container: {
     textAlign: 'center',
   },
@@ -55,6 +58,7 @@ export default function Header() {
           <h1 className={classes.appbarTitle}>
             My<span className={classes.colorText}>HealthNotebook.</span>
           </h1>
+          <Button color={classes.login}>Login</Button>
           <IconButton>
             <SortIcon className={classes.icon} />
           </IconButton>
