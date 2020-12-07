@@ -26,3 +26,5 @@ READMEREACT.md
 
 Procfile
 .env
+package-lock.json
+.eslintcache
