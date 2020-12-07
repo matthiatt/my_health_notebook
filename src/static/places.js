@@ -1,4 +1,5 @@
 const places = [
+  
   {
     title: 'Prescriptions',
     description:
@@ -13,6 +14,14 @@ const places = [
     imageUrl: process.env.PUBLIC_URL + '/assets/pilltime.jpg',
     time: 1500,
   },
+  // {
+  //   title: 'Log-In',
+  //   description:
+  //     ' Please Log-In or Register ',
+  //   imageUrl: process.env.PUBLIC_URL + '/assets/pilltime.jpg',
+  //   time: 1500,
+  // },
+
 ];
 
 export default places;
