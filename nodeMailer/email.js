@@ -2,7 +2,7 @@
 
 'use strict';
 
-const nodemailer = require('../lib/nodemailer');
+const nodemailer = require('./nodeMailer');
 
 // Generate SMTP service account from ethereal.email
 nodemailer.createTestAccount((err, account) => {

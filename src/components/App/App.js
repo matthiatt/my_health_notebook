@@ -27,10 +27,7 @@ import './App.css';
 
 
 //start of code for calendar component
-const data = [
-  // { start_date:'2020-06-10 6:00', end_date:'2020-06-10 8:00', text:'Event 1', id: 1 },
-  // { start_date:'2020-06-13 10:00', end_date:'2020-06-13 18:00', text:'Event 2', id: 2 }
-];
+const data = [];
 
 class App extends Component {
 state = {
@@ -58,23 +55,16 @@ logDataUpdate = (action, ev, id) => {
     this.addMessage(message);
 }
 
-// handleTimeFormatStateChange = (state) => {
-//     this.setState({
-//         currentTimeFormatState: state
-//     });
-// }
-
 render() {
     const { currentTimeFormatState, messages } = this.state;
     return (
         <div>
-          {/* if you want to toggle 12hr or 24hr format */}
-            {/* <div className="tool-bar">
+            <div className="tool-bar">
                 <Toolbar
                     timeFormatState={currentTimeFormatState}
                     onTimeFormatStateChange={this.handleTimeFormatStateChange}
                 />
-            </div> */}
+            </div>
             
             <div className='scheduler-container'>
                 <Scheduler
@@ -92,5 +82,3 @@ render() {
 }
 }
 export default App;
-
-//end of calendar component code
