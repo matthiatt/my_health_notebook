@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+// import Header from '../Header/Header';
+// import Footer from '../Footer/Footer';
 
 //for calendar component
 import React, { Component } from 'react';
@@ -10,7 +10,8 @@ import './App.css';
 // import Toolbar from './components/Toolbar';
 // import MessageArea from './components/MessageArea'
 
-//original code that was here vv
+
+// original code that was here vv
 // const App = ({ children }) => (
 //   <>
 //     <Header />
