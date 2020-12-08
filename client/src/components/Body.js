@@ -3,9 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import ImageCard from './ImageCard';
 import places from '../static/places';
 import useWindowPosition from '../hook/useWindowPosition';
-// import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
+import { PromiseProvider } from 'mongoose';
+import { Link, Typography } from '@material-ui/core';
+
+// import Scheduler from 'client/src/components/Scheduler/index.js';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,29 +29,23 @@ export default function () {
     <div className={classes.root} id="Body">
       <div>
         <ImageCard place={places[1]} checked={checked} />
-        <CardActions>
-        <Button size="small" color="primary">
-          CALENDAR LINK
-        </Button>
-      </CardActions>
+        <Typography>
+          <Link href="https://www.google.com/" target="_blank">Calendar</Link>
+        </Typography>
       </div>
 
       <div>
         <ImageCard place={places[0]} checked={checked} />
-        <CardActions>
-        <Button size="small" color="primary">
-         PRESCRIPTIONS LINK
-        </Button>
-      </CardActions>
+        <Typography>
+          <Link href="#" target="_blank">Prescriptions Link</Link>
+        </Typography>
       </div>
 
       <div>
         <ImageCard place={places[2]} checked={checked} /> 
-        <CardActions>
-        <Button size="small" color="primary">
-          LOG IN LINK 
-        </Button>
-      </CardActions>
+        <Typography>
+          <Link href="https://www.google.com/" target="_blank">Log In Link</Link>
+        </Typography>
       </div>
     </div>
   );
