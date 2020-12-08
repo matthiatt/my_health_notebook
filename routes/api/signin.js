@@ -16,6 +16,8 @@ module.exports = (app) => {
 //       .then(() => res.json(counter))
 //       .catch((err) => next(err));
 //   });
+
+
 app.post("api/account/signup", (req, res, next) => {
     const {body} = req;
     const {firstName, lastName, password} = body;
@@ -46,11 +48,10 @@ app.post("api/account/signup", (req, res, next) => {
             success: false,
             message: "Error: password name can not be blank."
         });
-    }
+}
     console.log("here");
 
     email = email.toLowerCase();
-
     //Steps:
     // 1. Verify email doesn't exist
     // 2. Save it.
@@ -68,7 +69,6 @@ app.post("api/account/signup", (req, res, next) => {
                 message: "Error: Account already exists."
             });
         }
-
         //Save the new user
         const newUser = new User();
 
