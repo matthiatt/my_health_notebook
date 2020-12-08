@@ -25,6 +25,6 @@ In **Prescriptions**, you can input all your medications and their descriptions.
 
 
 ## Future Development
-- pop up pill reminders
+- Pop up pill reminders
 - Prescription page 
-
+- Nearby physician search
