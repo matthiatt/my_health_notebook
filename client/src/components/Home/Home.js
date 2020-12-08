@@ -19,7 +19,7 @@ class Home extends Component {
       signUpLastName: "",
       signUpEmail: "",
       signUpPassword: "",
-    } = this.state;
+    }
 
     this.setState({
       isLoading: true,
@@ -44,6 +44,7 @@ class Home extends Component {
   componentDidMount() {
     const obj = getFromStorage("my_health_notebook"); //Name of react project
     if(obj && obj.token) {
+      const {token} = obj;
       fetch("api/account/verify?token=" + token)
       .then(res => res.json())
       .then(json => {
