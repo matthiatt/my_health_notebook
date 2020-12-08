@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ImageCard from './ImageCard';
 import places from '../static/places';
 import useWindowPosition from '../hook/useWindowPosition';
-// import Places from "../static/places";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +21,26 @@ export default function () {
   const checked = useWindowPosition('header');
   return (
     <div className={classes.root} id="Body">
-      <ImageCard place={places[1]} checked={checked} />
-      <ImageCard place={places[0]} checked={checked} />
-      <ImageCard place={places[2]} checked={checked} />
+      <div>
+        <ImageCard place={places[1]} checked={checked} />
+        <Typography>
+          <Link href="https://www.google.com/" target="_blank">Calendar</Link>
+        </Typography>
+      </div>
+
+      <div>
+        <ImageCard place={places[0]} checked={checked} />
+        <Typography>
+          <Link href="#" target="_blank">Prescriptions Link</Link>
+        </Typography>
+      </div>
+
+      <div>
+        <ImageCard place={places[2]} checked={checked} /> 
+        <Typography>
+          <Link href="https://www.google.com/" target="_blank">Log In Link</Link>
+        </Typography>
+      </div>
     </div>
   );
 }
