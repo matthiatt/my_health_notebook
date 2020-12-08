@@ -18,6 +18,7 @@ When you click on Calendar, you can input your appointment dates in the monthly 
 
 ## Links
 [Heroku Deployed](https://health-app-notebook.herokuapp.com/)
+[Github Repo](https://github.com/matthiatt/my_health_notebook)
 
 
 ## Future Development
