@@ -1,7 +1,7 @@
 # [My Health Notebook](https://health-app-notebook.herokuapp.com/)
 
 ## Description 
-
+**My Health Notebook** is here to be your *one stop shop* for all things health related.  Easily sort through your appointments and the medications prescribed for you.  We provide you a calendar where you can jot down your appointments as well as a scheduler to help remind you when you should be taking your pills
 
 ## Installation
 
@@ -18,14 +18,7 @@
 ###### [DeBelen, Toni Rose](https://github.com/tonirose311)
 
 
-
-
-## Contributing
-
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
-
-
-
+## Future Development
+-
+-
+-
