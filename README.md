@@ -31,8 +31,9 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 
 ## Usage 
+![Landing Page](client/public/assets/MyHealthNotebook_landing.png)
 
-Provide instructions and examples for use. Include screenshots as needed. 
+![Components](client/public/assets/MyHealthNotebook_components.png)
 
 
 ## Credits
