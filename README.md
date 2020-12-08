@@ -1,13 +1,15 @@
 # [My Health Notebook](https://health-app-notebook.herokuapp.com/)
 
-## Description 
+
+![Landing Page](client/public/assets/MyHealthNotebook_landing.png)
+
 **My Health Notebook** is here to be your *one stop shop* for all things health related.  Easily sort through your appointments and the medications prescribed for you.  We provide you a calendar where you can jot down your appointments as well as a scheduler to help remind you when you should be taking your pills
 
 ## Installation
 
 
 ## Usage 
-![Landing Page](client/public/assets/MyHealthNotebook_landing.png)
+
 
 ![Components](client/public/assets/MyHealthNotebook_components.png)
 
