@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ImageCard from './ImageCard';
 import places from '../static/places';
 import useWindowPosition from '../hook/useWindowPosition';
-
+import { Typography, Link } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
