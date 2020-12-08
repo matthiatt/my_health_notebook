@@ -18,8 +18,8 @@ export default function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Home />
       <Header />
+          <Home />
       <Body />
     </div>
   );
