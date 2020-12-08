@@ -3,12 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ImageCard from './ImageCard';
 import places from '../static/places';
 import useWindowPosition from '../hook/useWindowPosition';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
-import { PromiseProvider } from 'mongoose';
-import { Link, Typography } from '@material-ui/core';
-
-// import Scheduler from 'client/src/components/Scheduler/index.js';
 
 
 const useStyles = makeStyles((theme) => ({
