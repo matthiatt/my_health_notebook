@@ -10,7 +10,7 @@
 ![Components](client/public/assets/MyHealthNotebook_components.png)
 When you click on **Calendar**, you can input your appointment dates in the monthly view.  In weekly view you can input your medication and the times you need to take them.  
 
-In **Prescriptions**, you can input all your medications amd their descriptions. 
+In **Prescriptions**, you can input all your medications and their descriptions. 
 
 
 ## Credits
@@ -25,6 +25,6 @@ In **Prescriptions**, you can input all your medications amd their descriptions.
 
 
 ## Future Development
-- pop up pill reminders
+- Pop up pill reminders
 - Prescription page 
-
+- Nearby physician search
