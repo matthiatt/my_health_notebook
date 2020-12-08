@@ -1,4 +1,4 @@
-const places = [
+const Places = [
   {
     title: 'Prescriptions',
     description:
@@ -22,4 +22,4 @@ const places = [
   },
 ];
 
-export default places;
+export default Places;
