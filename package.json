@@ -31,7 +31,8 @@
     "googleapis": "^66.0.0",
     "if-env": "^1.0.4",
     "mongoose": "^5.11.5",
-    "nodemailer": "^6.4.16"
+    "nodemailer": "^6.4.16",
+    "webpack-dev-middleware": "^4.0.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
