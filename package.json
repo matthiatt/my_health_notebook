@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/matthiatt/my_health_notebook#readme",
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "googleapis": "^66.0.0",
