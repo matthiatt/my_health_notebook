@@ -5,13 +5,10 @@
 
 **My Health Notebook** is here to be your *one stop shop* for all things health related.  Easily sort through your appointments and the medications prescribed for you.  We provide you a calendar where you can jot down your appointments as well as a scheduler to help remind you when you should be taking your pills
 
-## Installation
-
 
 ## Usage 
-
-
 ![Components](client/public/assets/MyHealthNotebook_components.png)
+When you click on Calendar, you can input your appointment dates in the monthly view.  In weekly view you can input your medication and the times you need to take them.
 
 
 ## Credits
