@@ -8,7 +8,9 @@
 
 ## Usage 
 ![Components](client/public/assets/MyHealthNotebook_components.png)
-When you click on Calendar, you can input your appointment dates in the monthly view.  In weekly view you can input your medication and the times you need to take them.
+When you click on **Calendar**, you can input your appointment dates in the monthly view.  In weekly view you can input your medication and the times you need to take them.  
+
+In **Prescriptions**, you can input all your medications amd their descriptions. 
 
 
 ## Credits
@@ -18,10 +20,11 @@ When you click on Calendar, you can input your appointment dates in the monthly 
 
 ## Links
 [Heroku Deployed](https://health-app-notebook.herokuapp.com/)
+
 [Github Repo](https://github.com/matthiatt/my_health_notebook)
 
 
 ## Future Development
--
--
+- pop up pill reminders
+- Prescription page 
 -
