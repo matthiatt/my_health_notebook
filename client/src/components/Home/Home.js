@@ -214,6 +214,7 @@ class Home extends Component {
             value={signInEmail} 
             onChange={this.onTextboxChangeSignInEmail}
             />
+            <br />
           <input 
             type="password" 
             placeholder="Password" 
@@ -237,18 +238,21 @@ class Home extends Component {
           value={signUpFirstName}
           onChange={this.onTextboxChangeSignUpFirstName}
           />
+          <br />
           <input 
           type="text" placeholder="Last Name" 
           value={signUpLastName}
           onChange={this.onTextboxChangeSignUpLastName}
           />
+          <br />
           <input 
-          type="email" placeholder="Email" 
+          type="text" placeholder="Email" 
           value={signUpEmail}
           onChange={this.onTextboxChangeSignUpEmail}
           />
+          <br />
           <input 
-          type="password" placeholder="Password" 
+          type="text" placeholder="Password" 
           value={signUpPassword}
           onChange={this.onTextboxChangeSignUpPassword}
           />
