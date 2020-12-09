@@ -17,7 +17,7 @@ const Places = [
     title: 'Login',
     description:
       'Sign in in order to monitor the course of treatment, add a new prescription, and manage the status of certain drugs.',
-    // imageUrl: process.env.PUBLIC_URL + '/assets/pilltime.jpg',
+    imageUrl: process.env.PUBLIC_URL + '/assets/app-login.jpg',
     time: 1500,
   },
 ];
